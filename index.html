@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NexaSoft: mantenimiento preventivo y correctivo de computadoras, diagnóstico e instalación de software. Servicio técnico confiable y accesible.">
+  <meta name="theme-color" content="#061a32">
+  <link rel="icon" type="image/png" href="assets/logo-nexasoft.png">
+  <title>NexaSoft | Soporte técnico de computadoras</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#061a32;--navy2:#0a2a4d;--blue:#087bd4;--gold:#ffb000;--white:#f7f9fc;--muted:#b9c7d8;--card:#0c2745}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,sans-serif;background:var(--navy);color:var(--white);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1160px,92%);margin:auto}
+    .topbar{background:#031224;border-bottom:1px solid #ffffff14;color:#d6e3f2;font-size:.82rem;padding:9px 0}
+    .topbar .container{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    header{position:sticky;top:0;z-index:50;background:#061a32ed;backdrop-filter:blur(14px);border-bottom:1px solid #ffffff16}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:1.55rem;letter-spacing:-.06em}
+    .brand-logo{height:54px;width:auto;display:block}
+    @media(max-width:640px){.brand-logo{height:44px}}
+    .brand-mark{width:42px;height:42px;border-radius:13px;background:linear-gradient(145deg,#ffbd18,#087bd4);display:grid;place-items:center;color:white;font-size:1.55rem;font-weight:900;box-shadow:0 8px 25px #087bd455}
+    .brand span:last-child{color:var(--gold)}
+    .navlinks{display:flex;align-items:center;gap:25px;color:#d9e4f0;font-size:.9rem;font-weight:600}
+    .navlinks a:hover{color:var(--gold)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 21px;border-radius:999px;font-weight:800;font-size:.9rem;transition:.25s;cursor:pointer;border:1px solid transparent}
+    .btn-gold{background:var(--gold);color:#091b30;box-shadow:0 8px 24px #ffb00030}
+    .btn-gold:hover{transform:translateY(-3px);box-shadow:0 13px 30px #ffb00050}
+    .btn-outline{border-color:#ffffff55;color:white}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+    .menu{display:none;background:none;border:0;color:white;font-size:1.7rem}
+    .hero{position:relative;overflow:hidden;padding:92px 0 86px;background:radial-gradient(ellipse at 82% 30%,#087bd43b,transparent 40%),linear-gradient(125deg,#061a32 35%,#09294a)}
+    .hero:before{content:"";position:absolute;width:430px;height:430px;border:1px solid #ffb00035;border-radius:50%;right:-130px;top:-180px;box-shadow:0 0 0 45px #ffb00008,0 0 0 90px #ffb00006}
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:55px;position:relative}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--gold);font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
+    .eyebrow:before{content:"";width:28px;height:2px;background:var(--gold)}
+    h1{font-size:clamp(2.65rem,5vw,4.8rem);line-height:1.04;letter-spacing:-.055em;margin-bottom:22px}
+    h1 em{font-style:normal;color:var(--gold)}
+    .hero p{color:#c5d3e2;max-width:560px;font-size:1.08rem;margin-bottom:30px}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+    .hero-image{position:relative}
+    .hero-image img{width:100%;display:block;border-radius:25px;border:1px solid #ffffff2b;box-shadow:0 25px 70px #0008}
+    .floating-tag{position:absolute;left:-25px;bottom:25px;background:#ffb000;color:#071b31;padding:13px 18px;border-radius:14px;font-weight:900;box-shadow:0 12px 30px #0005}
+    .floating-tag small{display:block;font-size:.68rem;font-weight:700}
+    section{padding:88px 0}
+    .section-head{text-align:center;max-width:720px;margin:0 auto 45px}
+    .section-head .eyebrow{justify-content:center}
+    h2{font-size:clamp(2rem,4vw,3rem);line-height:1.12;letter-spacing:-.04em;margin-bottom:15px}
+    h2 span{color:var(--gold)}
+    .section-head p{color:var(--muted)}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:center}
+    .about-photo img{width:100%;border-radius:22px;border:1px solid #ffffff24;box-shadow:0 20px 55px #0006}
+    .about-copy p{color:#c4d2e0;margin:15px 0}
+    .promise{margin-top:24px;padding:18px 20px;border-left:3px solid var(--gold);background:#ffffff08;border-radius:0 14px 14px 0;color:#fff;font-weight:700}
+    .services{background:#081f39}
+    .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .service-card{background:linear-gradient(160deg,#103354,#0a223d);padding:25px 22px;border:1px solid #ffffff18;border-radius:18px;transition:.25s}
+    .service-card:hover{transform:translateY(-7px);border-color:#ffb00080;box-shadow:0 18px 35px #0004}
+    .service-icon{width:52px;height:52px;border-radius:15px;background:#087bd426;border:1px solid #087bd4;color:var(--gold);display:grid;place-items:center;font-size:1.5rem;margin-bottom:18px}
+    .service-card h3{font-size:1.08rem;margin-bottom:9px}
+    .service-card p{font-size:.88rem;color:#b9c9da}
+    .service-card .mini{display:block;color:var(--gold);font-weight:800;font-size:.83rem;margin-top:16px}
+    .feature-band{padding:34px 0;background:linear-gradient(90deg,#087bd4,#0a3762);text-align:center}
+    .feature-band strong{font-size:clamp(1.25rem,3vw,2rem);letter-spacing:-.03em}
+    .feature-band span{color:#ffcf4e}
+    .pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
+    .price-card,.pay-card{border-radius:22px;padding:32px;background:linear-gradient(145deg,#102f50,#0a213b);border:1px solid #ffffff20}
+    .price{font-size:3rem;font-weight:900;color:var(--gold);letter-spacing:-.06em;margin:12px 0}
+    .price small{font-size:1rem;color:#d6e3ef;letter-spacing:0}
+    .price-card p,.pay-card p{color:#c3d2e1}
+    .pay-options{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+    .pay-option{background:#ffffff0c;border:1px solid #ffffff20;border-radius:15px;padding:18px;text-align:center}
+    .pay-option b{display:block;font-size:1.2rem;color:white}
+    .pay-option span{font-size:.82rem;color:var(--muted)}
+    .number{font-size:1.15rem;font-weight:900;color:var(--gold);margin-top:7px}
+    .gallery{background:#081f39}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .gallery-item{overflow:hidden;border-radius:15px;border:1px solid #ffffff20;background:#0c2745;cursor:zoom-in}
+    .gallery-item img{width:100%;display:block;transition:transform .5s}
+    .gallery-item:hover img{transform:scale(1.035)}
+    .contact{background:radial-gradient(ellipse at 50% 100%,#087bd42b,transparent 60%)}
+    .contact-box{padding:55px 30px;text-align:center;border-radius:26px;border:1px solid #ffffff24;background:linear-gradient(135deg,#103354,#071b31);box-shadow:0 25px 70px #0004}
+    .contact-box p{color:#c5d3e2;max-width:620px;margin:0 auto 25px}
+    .socials{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:27px}
+    .socials a{padding:11px 16px;border:1px solid #ffffff30;border-radius:999px;font-weight:700;font-size:.88rem}
+    .socials a:hover{border-color:var(--gold);color:var(--gold)}
+    footer{background:#031224;padding:30px 0;color:#aebed0;font-size:.85rem}
+    footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .wa-float{position:fixed;right:22px;bottom:22px;z-index:60;background:#19c66b;color:#032414;border-radius:999px;padding:14px 19px;font-weight:900;box-shadow:0 10px 30px #0006}
+    .wa-float:hover{transform:translateY(-3px)}
+    @media(max-width:900px){.hero-grid,.about-grid{grid-template-columns:1fr}.hero-image{max-width:650px;margin:auto}.service-grid{grid-template-columns:repeat(2,1fr)}.gallery-grid{grid-template-columns:repeat(2,1fr)}.navlinks{gap:14px;font-size:.82rem}}
+    @media(max-width:650px){.topbar .container{justify-content:center;text-align:center}nav{height:68px}.menu{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:#061a32;padding:22px 5%;flex-direction:column;align-items:flex-start;border-bottom:1px solid #ffffff20}.navlinks.open{display:flex}.nav-cta{display:none}.hero{padding:65px 0}.hero-grid{gap:35px}.floating-tag{left:10px;bottom:12px}.service-grid,.pricing-grid,.gallery-grid{grid-template-columns:1fr}.service-card{padding:22px}.pay-options{grid-template-columns:1fr 1fr}section{padding:65px 0}.contact-box{padding:38px 20px}.wa-float{right:13px;bottom:13px;padding:12px 15px;font-size:.85rem}}
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="container"><span>Soporte técnico confiable, rápido y accesible</span><span>Atención al cliente · Perú</span></div></div>
+  <header>
+    <nav class="container">
+      <a class="brand" href="#inicio" aria-label="NexaSoft inicio"><img class="brand-logo" src="assets/logo-nexasoft.png" alt="NexaSoft - Conectamos tu negocio con la tecnología"></a>
+      <button class="menu" aria-label="Abrir menú" onclick="document.querySelector('.navlinks').classList.toggle('open')">☰</button>
+      <div class="navlinks">
+        <a href="#inicio">Inicio</a><a href="#nosotros">Quiénes somos</a><a href="#servicios">Servicios</a><a href="#precios">Precios</a><a href="#galeria">Galería</a><a href="#contacto">Contacto</a>
+      </div>
+      <a class="btn btn-gold nav-cta" href="https://wa.me/51921395854?text=%E2%9A%A1%20TU%20TECNOLOG%C3%8DA%20MERECE%20EL%20MEJOR%20CUIDADO.%20%F0%9F%92%BB%E2%9C%A8%0A%0AEn%20%2ANexaSoft%2A%20trabajamos%20para%20que%20tu%20computadora%20est%C3%A9%20lista%20para%20acompa%C3%B1arte%20en%20cada%20proyecto%2C%20tarea%20y%20desaf%C3%ADo.%20%F0%9F%9A%80%0A%0A%F0%9F%94%A7%20%2ANUESTROS%20SERVICIOS%3A%2A%0A%F0%9F%92%BB%20Mantenimiento%20preventivo%20y%20correctivo.%0A%F0%9F%9B%A0%EF%B8%8F%20Diagn%C3%B3stico%20y%20reparaci%C3%B3n%20de%20fallas.%0A%E2%9A%99%EF%B8%8F%20Instalaci%C3%B3n%20y%20configuraci%C3%B3n%20de%20software.%0A%F0%9F%9A%80%20Optimizaci%C3%B3n%20del%20rendimiento.%0A%F0%9F%94%8D%20Soluciones%20para%20hardware%20y%20software.%0A%0A%F0%9F%92%B0%20%C2%A1PRECIOS%20DESDE%20S%2F%2030.00%21%0A%0A%F0%9F%8C%9F%20Tecnolog%C3%ADa%2C%20atenci%C3%B3n%20personalizada%20y%20soluciones%20para%20tus%20equipos.%0A%0A%F0%9F%93%B2%20%2A%C2%BFTU%20COMPUTADORA%20NECESITA%20ATENCI%C3%93N%3F%2A%0AEscr%C3%ADbenos%20por%20WhatsApp%3A%0A%F0%9F%93%9E%20921%20395%20854%0A%0A%F0%9F%92%B3%20Yape%20%7C%20Plin%0A%0A%E2%9D%A4%EF%B8%8F%20Dale%20ME%20GUSTA.%0A%F0%9F%92%AC%20D%C3%A9janos%20tu%20consulta.%0A%F0%9F%93%8C%20Guarda%20esta%20publicaci%C3%B3n.%0A%F0%9F%93%A4%20Comp%C3%A1rtela%20con%20tus%20amigos.%0A%0A%2ANEXASOFT%2A%0A%F0%9F%92%99%20Conectamos%20tu%20negocio%20con%20la%20tecnolog%C3%ADa.%0A%0A%23NexaSoft%20%23Tecnologia%20%23SoporteTecnico%20%23MantenimientoPreventivo%20%23MantenimientoCorrectivo%20%23Computadoras%20%23Emprendedores%20%23ServicioTecnico%20%23Informatica%20%23Peru" target="_blank" rel="noopener">Solicitar servicio ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Tecnología que te acompaña</div>
+          <h1>Conectamos tu negocio con la <em>tecnología.</em></h1>
+          <p>En NexaSoft cuidamos el rendimiento de tus equipos con mantenimiento, reparación, diagnóstico e instalación de software. Soluciones técnicas para que sigas trabajando con tranquilidad.</p>
+          <div class="hero-actions"><a class="btn btn-gold" href="https://wa.me/51921395854?text=%E2%9A%A1%20TU%20TECNOLOG%C3%8DA%20MERECE%20EL%20MEJOR%20CUIDADO.%20%F0%9F%92%BB%E2%9C%A8%0A%0AEn%20%2ANexaSoft%2A%20trabajamos%20para%20que%20tu%20computadora%20est%C3%A9%20lista%20para%20acompa%C3%B1arte%20en%20cada%20proyecto%2C%20tarea%20y%20desaf%C3%ADo.%20%F0%9F%9A%80%0A%0A%F0%9F%94%A7%20%2ANUESTROS%20SERVICIOS%3A%2A%0A%F0%9F%92%BB%20Mantenimiento%20preventivo%20y%20correctivo.%0A%F0%9F%9B%A0%EF%B8%8F%20Diagn%C3%B3stico%20y%20reparaci%C3%B3n%20de%20fallas.%0A%E2%9A%99%EF%B8%8F%20Instalaci%C3%B3n%20y%20configuraci%C3%B3n%20de%20software.%0A%F0%9F%9A%80%20Optimizaci%C3%B3n%20del%20rendimiento.%0A%F0%9F%94%8D%20Soluciones%20para%20hardware%20y%20software.%0A%0A%F0%9F%92%B0%20%C2%A1PRECIOS%20DESDE%20S%2F%2030.00%21%0A%0A%F0%9F%8C%9F%20Tecnolog%C3%ADa%2C%20atenci%C3%B3n%20personalizada%20y%20soluciones%20para%20tus%20equipos.%0A%0A%F0%9F%93%B2%20%2A%C2%BFTU%20COMPUTADORA%20NECESITA%20ATENCI%C3%93N%3F%2A%0AEscr%C3%ADbenos%20por%20WhatsApp%3A%0A%F0%9F%93%9E%20921%20395%20854%0A%0A%F0%9F%92%B3%20Yape%20%7C%20Plin%0A%0A%E2%9D%A4%EF%B8%8F%20Dale%20ME%20GUSTA.%0A%F0%9F%92%AC%20D%C3%A9janos%20tu%20consulta.%0A%F0%9F%93%8C%20Guarda%20esta%20publicaci%C3%B3n.%0A%F0%9F%93%A4%20Comp%C3%A1rtela%20con%20tus%20amigos.%0A%0A%2ANEXASOFT%2A%0A%F0%9F%92%99%20Conectamos%20tu%20negocio%20con%20la%20tecnolog%C3%ADa.%0A%0A%23NexaSoft%20%23Tecnologia%20%23SoporteTecnico%20%23MantenimientoPreventivo%20%23MantenimientoCorrectivo%20%23Computadoras%20%23Emprendedores%20%23ServicioTecnico%20%23Informatica%20%23Peru" target="_blank" rel="noopener">💬 Escríbenos por WhatsApp</a><a class="btn btn-outline" href="#servicios">Conocer servicios ↓</a></div>
+        </div>
+        <div class="hero-image"><img src="assets/catalogo-01.jpg" alt="Catálogo NexaSoft: técnico realizando mantenimiento a una computadora"><div class="floating-tag"><small>SERVICIO TÉCNICO</small>Tu equipo en buenas manos</div></div>
+      </div>
+    </section>
+
+    <section id="nosotros">
+      <div class="container about-grid">
+        <div class="about-photo"><img src="assets/catalogo-02.jpg" alt="Presentación de NexaSoft"></div>
+        <div class="about-copy"><div class="eyebrow">Conócenos</div><h2>¿Quiénes <span>somos?</span></h2>
+          <p>En NexaSoft ayudamos a pequeños negocios, emprendedores, estudiantes y personas a mantener sus computadoras en óptimas condiciones, brindando un servicio técnico confiable, rápido y accesible.</p>
+          <p>Trabajamos para que tus equipos funcionen correctamente y puedas continuar con tus actividades con mayor seguridad y confianza.</p>
+          <div class="promise">“Tu equipo en buenas manos, siempre.”</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="feature-band"><div class="container"><strong>Tu computadora funciona mejor <span>con NexaSoft.</span></strong></div></div>
+
+    <section class="services" id="servicios">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Soluciones tecnológicas</div><h2>Nuestros <span>servicios</span></h2><p>Atención técnica para mantener tu computadora en buen estado, resolver fallas y dejarla lista para trabajar.</p></div>
+        <div class="service-grid">
+          <article class="service-card"><div class="service-icon">⚙</div><h3>Mantenimiento preventivo</h3><p>Limpieza y revisión general del equipo, revisión de componentes, eliminación de polvo y mejora del rendimiento.</p><span class="mini">Desde S/ 30.00</span></article>
+          <article class="service-card"><div class="service-icon">🔧</div><h3>Mantenimiento correctivo</h3><p>Reparación de fallas de hardware y software, cambio de piezas cuando sea necesario, recuperación y pruebas.</p><span class="mini">Desde S/ 30.00</span></article>
+          <article class="service-card"><div class="service-icon">⌕</div><h3>Diagnóstico y solución</h3><p>Análisis completo, detección de fallas de hardware y software, reparación, optimización e informe del estado.</p><span class="mini">Desde S/ 30.00</span></article>
+          <article class="service-card"><div class="service-icon">▣</div><h3>Instalación y configuración</h3><p>Instalación de sistemas operativos, programas de uso diario, configuración de dispositivos y optimización.</p><span class="mini">Desde S/ 30.00</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="precios">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Atención accesible</div><h2>Precios y <span>formas de pago</span></h2><p>Servicio técnico accesible, sin complicaciones. El precio final puede variar según el trabajo requerido.</p></div>
+        <div class="pricing-grid">
+          <div class="price-card"><h3>Servicios técnicos</h3><div class="price">S/ 30.00 <small>desde</small></div><p>Solicita una evaluación para conocer el servicio que necesita tu equipo y confirmar el costo antes de iniciar el trabajo.</p><br><a class="btn btn-gold" href="https://wa.me/51921395854?text=%E2%9A%A1%20TU%20TECNOLOG%C3%8DA%20MERECE%20EL%20MEJOR%20CUIDADO.%20%F0%9F%92%BB%E2%9C%A8%0A%0AEn%20%2ANexaSoft%2A%20trabajamos%20para%20que%20tu%20computadora%20est%C3%A9%20lista%20para%20acompa%C3%B1arte%20en%20cada%20proyecto%2C%20tarea%20y%20desaf%C3%ADo.%20%F0%9F%9A%80%0A%0A%F0%9F%94%A7%20%2ANUESTROS%20SERVICIOS%3A%2A%0A%F0%9F%92%BB%20Mantenimiento%20preventivo%20y%20correctivo.%0A%F0%9F%9B%A0%EF%B8%8F%20Diagn%C3%B3stico%20y%20reparaci%C3%B3n%20de%20fallas.%0A%E2%9A%99%EF%B8%8F%20Instalaci%C3%B3n%20y%20configuraci%C3%B3n%20de%20software.%0A%F0%9F%9A%80%20Optimizaci%C3%B3n%20del%20rendimiento.%0A%F0%9F%94%8D%20Soluciones%20para%20hardware%20y%20software.%0A%0A%F0%9F%92%B0%20%C2%A1PRECIOS%20DESDE%20S%2F%2030.00%21%0A%0A%F0%9F%8C%9F%20Tecnolog%C3%ADa%2C%20atenci%C3%B3n%20personalizada%20y%20soluciones%20para%20tus%20equipos.%0A%0A%F0%9F%93%B2%20%2A%C2%BFTU%20COMPUTADORA%20NECESITA%20ATENCI%C3%93N%3F%2A%0AEscr%C3%ADbenos%20por%20WhatsApp%3A%0A%F0%9F%93%9E%20921%20395%20854%0A%0A%F0%9F%92%B3%20Yape%20%7C%20Plin%0A%0A%E2%9D%A4%EF%B8%8F%20Dale%20ME%20GUSTA.%0A%F0%9F%92%AC%20D%C3%A9janos%20tu%20consulta.%0A%F0%9F%93%8C%20Guarda%20esta%20publicaci%C3%B3n.%0A%F0%9F%93%A4%20Comp%C3%A1rtela%20con%20tus%20amigos.%0A%0A%2ANEXASOFT%2A%0A%F0%9F%92%99%20Conectamos%20tu%20negocio%20con%20la%20tecnolog%C3%ADa.%0A%0A%23NexaSoft%20%23Tecnologia%20%23SoporteTecnico%20%23MantenimientoPreventivo%20%23MantenimientoCorrectivo%20%23Computadoras%20%23Emprendedores%20%23ServicioTecnico%20%23Informatica%20%23Peru" target="_blank" rel="noopener">Consultar precio ↗</a></div>
+          <div class="pay-card"><h3>Medios de pago</h3><p>Aceptamos pagos por billeteras digitales.</p><div class="pay-options"><div class="pay-option"><b>Yape</b><span>Pago digital</span><div class="number">921 395 854</div></div><div class="pay-option"><b>Plin</b><span>Pago digital</span><div class="number">921 395 854</div></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" id="galeria">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Nuestro catálogo</div><h2>NexaSoft en <span>imágenes</span></h2><p>Conoce los detalles de nuestros servicios y la información comercial presentada en el catálogo.</p></div>
+        <div class="gallery-grid">
+          <a class="gallery-item" href="assets/catalogo-03.jpg" target="_blank"><img src="assets/catalogo-03.jpg" alt="Catálogo NexaSoft: servicios"></a>
+          <a class="gallery-item" href="assets/catalogo-04.jpg" target="_blank"><img src="assets/catalogo-04.jpg" alt="Catálogo NexaSoft: mantenimiento preventivo"></a>
+          <a class="gallery-item" href="assets/catalogo-05.jpg" target="_blank"><img src="assets/catalogo-05.jpg" alt="Catálogo NexaSoft: mantenimiento correctivo"></a>
+          <a class="gallery-item" href="assets/catalogo-06.jpg" target="_blank"><img src="assets/catalogo-06.jpg" alt="Catálogo NexaSoft: diagnóstico"></a>
+          <a class="gallery-item" href="assets/catalogo-07.jpg" target="_blank"><img src="assets/catalogo-07.jpg" alt="Catálogo NexaSoft: instalación de software"></a>
+          <a class="gallery-item" href="assets/catalogo-08.jpg" target="_blank"><img src="assets/catalogo-08.jpg" alt="Catálogo NexaSoft: precios y pagos"></a>
+          <a class="gallery-item" href="assets/catalogo-09.jpg" target="_blank"><img src="assets/catalogo-09.jpg" alt="Catálogo NexaSoft: contacto"></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="container"><div class="contact-box">
+        <div class="eyebrow">Estamos para ayudarte</div><h2>¡Soluciona tus problemas tecnológicos <span>con NexaSoft!</span></h2>
+        <p>Escríbenos para consultar nuestros servicios, coordinar una atención o solicitar información sobre el mantenimiento de tu computadora.</p>
+        <a class="btn btn-gold" href="https://wa.me/51921395854?text=%E2%9A%A1%20TU%20TECNOLOG%C3%8DA%20MERECE%20EL%20MEJOR%20CUIDADO.%20%F0%9F%92%BB%E2%9C%A8%0A%0AEn%20%2ANexaSoft%2A%20trabajamos%20para%20que%20tu%20computadora%20est%C3%A9%20lista%20para%20acompa%C3%B1arte%20en%20cada%20proyecto%2C%20tarea%20y%20desaf%C3%ADo.%20%F0%9F%9A%80%0A%0A%F0%9F%94%A7%20%2ANUESTROS%20SERVICIOS%3A%2A%0A%F0%9F%92%BB%20Mantenimiento%20preventivo%20y%20correctivo.%0A%F0%9F%9B%A0%EF%B8%8F%20Diagn%C3%B3stico%20y%20reparaci%C3%B3n%20de%20fallas.%0A%E2%9A%99%EF%B8%8F%20Instalaci%C3%B3n%20y%20configuraci%C3%B3n%20de%20software.%0A%F0%9F%9A%80%20Optimizaci%C3%B3n%20del%20rendimiento.%0A%F0%9F%94%8D%20Soluciones%20para%20hardware%20y%20software.%0A%0A%F0%9F%92%B0%20%C2%A1PRECIOS%20DESDE%20S%2F%2030.00%21%0A%0A%F0%9F%8C%9F%20Tecnolog%C3%ADa%2C%20atenci%C3%B3n%20personalizada%20y%20soluciones%20para%20tus%20equipos.%0A%0A%F0%9F%93%B2%20%2A%C2%BFTU%20COMPUTADORA%20NECESITA%20ATENCI%C3%93N%3F%2A%0AEscr%C3%ADbenos%20por%20WhatsApp%3A%0A%F0%9F%93%9E%20921%20395%20854%0A%0A%F0%9F%92%B3%20Yape%20%7C%20Plin%0A%0A%E2%9D%A4%EF%B8%8F%20Dale%20ME%20GUSTA.%0A%F0%9F%92%AC%20D%C3%A9janos%20tu%20consulta.%0A%F0%9F%93%8C%20Guarda%20esta%20publicaci%C3%B3n.%0A%F0%9F%93%A4%20Comp%C3%A1rtela%20con%20tus%20amigos.%0A%0A%2ANEXASOFT%2A%0A%F0%9F%92%99%20Conectamos%20tu%20negocio%20con%20la%20tecnolog%C3%ADa.%0A%0A%23NexaSoft%20%23Tecnologia%20%23SoporteTecnico%20%23MantenimientoPreventivo%20%23MantenimientoCorrectivo%20%23Computadoras%20%23Emprendedores%20%23ServicioTecnico%20%23Informatica%20%23Peru" target="_blank" rel="noopener">WhatsApp: 921 395 854 ↗</a>
+        <div class="socials">
+          <a href="https://www.instagram.com/nexasoft51?rpxt=MXY4NjFmb2VlamJmMA==" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/@nexasoft5" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://www.facebook.com/share/r/1FbC26cZrR/" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div></div>
+    </section>
+  </main>
+
+  <footer><div class="container"><span>© <span id="year"></span> NexaSoft. Todos los derechos reservados.</span><span>Tu tranquilidad, nuestro compromiso.</span></div></footer>
+  <a class="wa-float" href="https://wa.me/51921395854?text=%E2%9A%A1%20TU%20TECNOLOG%C3%8DA%20MERECE%20EL%20MEJOR%20CUIDADO.%20%F0%9F%92%BB%E2%9C%A8%0A%0AEn%20%2ANexaSoft%2A%20trabajamos%20para%20que%20tu%20computadora%20est%C3%A9%20lista%20para%20acompa%C3%B1arte%20en%20cada%20proyecto%2C%20tarea%20y%20desaf%C3%ADo.%20%F0%9F%9A%80%0A%0A%F0%9F%94%A7%20%2ANUESTROS%20SERVICIOS%3A%2A%0A%F0%9F%92%BB%20Mantenimiento%20preventivo%20y%20correctivo.%0A%F0%9F%9B%A0%EF%B8%8F%20Diagn%C3%B3stico%20y%20reparaci%C3%B3n%20de%20fallas.%0A%E2%9A%99%EF%B8%8F%20Instalaci%C3%B3n%20y%20configuraci%C3%B3n%20de%20software.%0A%F0%9F%9A%80%20Optimizaci%C3%B3n%20del%20rendimiento.%0A%F0%9F%94%8D%20Soluciones%20para%20hardware%20y%20software.%0A%0A%F0%9F%92%B0%20%C2%A1PRECIOS%20DESDE%20S%2F%2030.00%21%0A%0A%F0%9F%8C%9F%20Tecnolog%C3%ADa%2C%20atenci%C3%B3n%20personalizada%20y%20soluciones%20para%20tus%20equipos.%0A%0A%F0%9F%93%B2%20%2A%C2%BFTU%20COMPUTADORA%20NECESITA%20ATENCI%C3%93N%3F%2A%0AEscr%C3%ADbenos%20por%20WhatsApp%3A%0A%F0%9F%93%9E%20921%20395%20854%0A%0A%F0%9F%92%B3%20Yape%20%7C%20Plin%0A%0A%E2%9D%A4%EF%B8%8F%20Dale%20ME%20GUSTA.%0A%F0%9F%92%AC%20D%C3%A9janos%20tu%20consulta.%0A%F0%9F%93%8C%20Guarda%20esta%20publicaci%C3%B3n.%0A%F0%9F%93%A4%20Comp%C3%A1rtela%20con%20tus%20amigos.%0A%0A%2ANEXASOFT%2A%0A%F0%9F%92%99%20Conectamos%20tu%20negocio%20con%20la%20tecnolog%C3%ADa.%0A%0A%23NexaSoft%20%23Tecnologia%20%23SoporteTecnico%20%23MantenimientoPreventivo%20%23MantenimientoCorrectivo%20%23Computadoras%20%23Emprendedores%20%23ServicioTecnico%20%23Informatica%20%23Peru" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">WhatsApp ↗</a>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.navlinks').classList.remove('open')));</script>
+</body>
+</html>
